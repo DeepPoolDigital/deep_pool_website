@@ -163,6 +163,7 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .logo {
@@ -171,15 +172,16 @@ header .container {
 
 .round-logo {
     position: absolute;
-    top: 65%; /* Moved further down */
-    transform: translateY(-50%); /* Center vertically */
-    left: 0px; /* Moved further to the left */
+    top: 65%;
+    transform: translateY(-50%);
+    left: 0px;
     z-index: 1001;
     overflow: hidden;
 }
 
 .logo-img {
-    width: 350px; /* Much larger size */
+    width: 350px;
+    height: auto;
     display: block;
 }
 
@@ -906,9 +908,23 @@ footer {
     }
 }
 
+@media screen and (max-width: 992px) {
+    .logo-img {
+        width: 280px;
+    }
+}
+
 @media screen and (max-width: 768px) {
+    .logo-img {
+        width: 220px;
+    }
+    
+    .social-icons {
+        margin-right: 15px;
+    }
+    
     .menu-toggle {
-        display: block;
+        display: flex;
     }
     
     nav {
@@ -955,6 +971,10 @@ footer {
 }
 
 @media screen and (max-width: 576px) {
+    .logo-img {
+        width: 180px;
+    }
+    
     .portfolio-grid,
     .services-grid,
     .team-grid {
